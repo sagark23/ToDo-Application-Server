@@ -12,18 +12,30 @@ import java.util.stream.Collectors;
 public class TodoDataService {
 
     private static List<Todo> todos = new ArrayList<>();
+    private static long idCounter = 0;
 
     static {
-        todos.add(new Todo("sa", "Do Skydiving", new Date(2019, 06, 1), false));
-        todos.add(new Todo("Jon", "Become an expert in Angular", new Date(2019, 06, 1), false));
-        todos.add(new Todo("sa", "Lean Microservices architecture", new Date(2019, 06, 1), false));
+        todos.add(new Todo(++idCounter,"sa", "Do Skydiving", new Date(), false));
+        todos.add(new Todo(++idCounter,"Jon", "Become an expert in Angular", new Date(), false));
+        todos.add(new Todo(++idCounter,"sa", "Lean Microservices architecture", new Date(), false));
     }
 
     public List<Todo> getTodos(String username) {
         return todos.stream().filter(todo -> todo.getUserName().equals(username)).collect(Collectors.toList());
     }
 
-    public boolean deleteTodo(String username, int id) {
+    public Todo save(Todo todo){
+        if(todo.getId() > 0){
+            deleteTodo(todo.getUserName(), todo.getId());
+            todos.add(todo);
+        }else{
+            todo.setId(++idCounter);
+            todos.add(todo);
+        }
+        return todo;
+    }
+
+    public boolean deleteTodo(String username, long id) {
         Optional<Todo> todo = getTodoById(id);
 
        if(todo.isPresent() && todo.get().getUserName().equals(username)){
@@ -33,7 +45,7 @@ public class TodoDataService {
        return false;
     }
 
-    private Optional<Todo> getTodoById(int id) {
+    public Optional<Todo> getTodoById(long id) {
         return todos.stream().filter(todo -> todo.getId() == id).findFirst();
     }
 }

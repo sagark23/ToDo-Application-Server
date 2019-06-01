@@ -4,16 +4,18 @@ import java.util.Date;
 
 public class Todo {
 
-    private static long idCounter = 0;
-
     private long id;
     private String userName;
     private String description;
     private Date targetDate;
     private boolean isDone;
 
-    public Todo(String username, String description, Date targetDate, boolean isDone) {
-        this.id = ++idCounter;
+    protected Todo(){
+
+    }
+
+    public Todo(long id, String username, String description, Date targetDate, boolean isDone) {
+        this.id = id;
         this.userName = username;
         this.description = description;
         this.targetDate = targetDate;
