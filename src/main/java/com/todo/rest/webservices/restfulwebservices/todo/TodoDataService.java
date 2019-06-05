@@ -15,9 +15,9 @@ public class TodoDataService {
     private static long idCounter = 0;
 
     static {
-        todos.add(new Todo(++idCounter,"sa", "Do Skydiving", new Date(), false));
+        todos.add(new Todo(++idCounter,"user", "Do Skydiving", new Date(), false));
         todos.add(new Todo(++idCounter,"Jon", "Become an expert in Angular", new Date(), false));
-        todos.add(new Todo(++idCounter,"sa", "Lean Microservices architecture", new Date(), false));
+        todos.add(new Todo(++idCounter,"user", "Lean Microservices architecture", new Date(), false));
     }
 
     public List<Todo> getTodos(String username) {
