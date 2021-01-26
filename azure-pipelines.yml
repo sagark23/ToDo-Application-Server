@@ -12,10 +12,10 @@ variables:
   azureSubscription: 'cda75c88-ebbf-47b3-9373-6ae4f92ebee0'
   
   # Web app name
-  webAppName: ''
+  webAppName: 'todo-application-server'
 
   # Environment name
-  environmentName: ''
+  environmentName: 'dev'
   
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
