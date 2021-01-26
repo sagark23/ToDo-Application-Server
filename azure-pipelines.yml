@@ -12,7 +12,7 @@ variables:
   azureSubscription: 'cda75c88-ebbf-47b3-9373-6ae4f92ebee0'
   
   # Web app name
-  webAppName: 'todo-application-server'
+  webAppName: 'restful-web-services-0.0.1-SNAPSHOT'
 
   # Environment name
   environmentName: 'dev'
