@@ -9,7 +9,7 @@ trigger:
 variables:
 
   # Azure Resource Manager connection created during pipeline creation
-  azureSubscription: 'cda75c88-ebbf-47b3-9373-6ae4f92ebee0'
+  azureSubscription: 'd85036d8-fb80-4b2e-9b5f-d5d4030c72b5'
   
   # Web app name
   webAppName: 'restful-web-services-0.0.1-SNAPSHOT.jar'
